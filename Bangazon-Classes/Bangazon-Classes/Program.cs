@@ -47,11 +47,13 @@ namespace Bangazon_Classes
 
             // Create a method that allows external code to remove an employee
             public void RemoveEmployee(string employee)
+
             {
                 Employees.Remove(employee);
             }
 
         }
+
     }
-   
+
 }
