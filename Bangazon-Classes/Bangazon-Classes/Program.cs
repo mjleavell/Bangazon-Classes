@@ -31,6 +31,15 @@ namespace Bangazon_Classes
             {
                 Employees.Remove(firedEmployee);
             }
+
+            // Create a method to write the name of each employee to the console
+            public void ListEmployees()
+            {
+                foreach(Employee employee in Employees)
+                {
+                    Console.WriteLine(employee.EmployeeName);
+                }
+            }
         }
 
         // static method that launches everything
@@ -38,11 +47,17 @@ namespace Bangazon_Classes
         {
             Company BrandNewCompany = new Company("Brand New Congress", DateTime.Now);
             Employee marg = new Employee("marg", "junior dev", DateTime.Now);
+            Employee serena = new Employee("Serena Williams", "Tennis Player", DateTime.Now);
+            Employee federer = new Employee("Roger Federer", "THE GOAT", DateTime.Now);
 
             BrandNewCompany.AddEmployee(marg);
+            BrandNewCompany.AddEmployee(serena);
+            BrandNewCompany.AddEmployee(federer);
 
-            Console.WriteLine($"Name: {marg.EmployeeName}; Title: {marg.JobTitle}; Date: {marg.StartDate}");
-            Console.WriteLine($"Company: {BrandNewCompany.Name}; Employees: {BrandNewCompany.Employees}; Created: {BrandNewCompany.CreatedOn}");
+            //Console.WriteLine($"Name: {marg.EmployeeName}; Title: {marg.JobTitle}; Date: {marg.StartDate}");
+            //Console.WriteLine($"Company: {BrandNewCompany.Name}; Employees: {BrandNewCompany.Employees}; Created: {BrandNewCompany.CreatedOn}");
+
+            BrandNewCompany.ListEmployees();
 
             Console.ReadLine();
         }
